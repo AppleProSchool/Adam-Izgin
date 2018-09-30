@@ -4,19 +4,77 @@
 		<meta charset="utf-8">
 		<title>AppleProSchool</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="http://koda.nu/arkivet/32805212"></script>
 		<script type="text/javascript">
 			function html() {
-				location.href="https://appleproschool.github.io/Adam-Izgin/Html.html";
+				document.querySelectorAll('.dropdown')[0].style.display="block";
+				document.querySelectorAll('.content')[0].setAttribute('onclick', 'closeDropdown();');
 			}
+			function level1() {
+				document.querySelectorAll('.down')[0].removeAttribute('onclick');
+				document.querySelectorAll('.ripple')[0].style.transform="translate(-50%, -50%) scale(3.3)";
+				setTimeout(function() {
+					document.querySelectorAll('.ripple')[0].style.opacity="0";
+				}, 150);
+				setTimeout(function() {
+					document.querySelectorAll('.ripple')[0].style.transition="none";
+					document.querySelectorAll('.ripple')[0].style.transform="translate(-50%, -50%) scale(0)";
+					document.querySelectorAll('.ripple')[0].style.opacity="1";
+				}, 300);
+				setTimeout(function() {
+					document.querySelectorAll('.ripple')[0].style.transition="all 200ms ease-in-out";
+					document.querySelectorAll('.down')[0].setAttribute('onclick', 'level1();');
+				}, 500);
+			};
+			function level2() {
+				document.querySelectorAll('.down')[1].removeAttribute('onclick');
+				document.querySelectorAll('.ripple')[1].style.transform="translate(-50%, -50%) scale(3.3)";
+				setTimeout(function() {
+					document.querySelectorAll('.ripple')[1].style.opacity="0";
+				}, 150);
+				setTimeout(function() {
+					document.querySelectorAll('.ripple')[1].style.transition="none";
+					document.querySelectorAll('.ripple')[1].style.transform="translate(-50%, -50%) scale(0)";
+					document.querySelectorAll('.ripple')[1].style.opacity="1";
+				}, 300);
+				setTimeout(function() {
+					document.querySelectorAll('.ripple')[1].style.transition="all 200ms ease-in-out";
+					document.querySelectorAll('.down')[1].setAttribute('onclick', 'level2();');
+					location.href="https://appleproschool.github.io/Adam-Izgin/Html.html";
+				}, 500);
+			};
+
+			function closeDropdown() {
+				document.querySelectorAll('.dropdown')[0].style.display="none";
+			};
+
+			$(document).ready(function() {
+
+			});
+
 		</script>
 	</head>
 	<body>
 	
 		<div class="header c-5">
-			<h2 onclick="html();">Html</h2>
+			<h2 onclick="html();" id="html">Html</h2>
 			<h2>Css</h2>
 			<h2>JavaScript</h2>
 			<h1 class="title">AppleProSchool</h1>
+			<div class="rotate"></div>
+		</div>
+
+		<div class="dropdown">
+			<ol>
+				<div class="down" onclick="level1();">
+					<div class="ripple drop"></div>
+					<p>Level 1</p>
+				</div>
+				<div class="down" onclick="level2();">
+					<div class="ripple drop"></div>
+					<p>Level 2</p>
+				</div>
+			</ol>
 		</div>
 		
 		<div class="content">
@@ -374,7 +432,7 @@ body
 				width: 100vw;
 				height: 30px;
 				padding: 7px;
-				box-shadow: 0 3px 10px -5 rgba(0, 0, 0, .3);
+				box-shadow: 0 5px 10px -3px rgba(0, 0, 0, .3);
 				position: fixed;
 				-webkit-user-select: none;
 				-moz-user-select: none;
@@ -543,6 +601,90 @@ body
 				.sheild {
 					display: block;
 				}
+			}
+
+			.dropdown {
+				width: 100px;
+				height: 20px;
+				background: #333;
+				position: absolute;
+				z-index: 1;
+				top: 45px;
+				left: 50px;
+				color: #fff;
+				padding: 20px 10px;
+				border-radius: 7px;
+				box-shadow: 0 0 10px -1.5px rgba(0, 0, 0, .3);
+				display: none;
+			}
+
+			.dropdown p {
+				text-align: center;
+				white-space: nowrap;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				transition: all 200ms ease-in-out;
+			}
+
+			.down:nth-child(1) {
+				top: 25%;
+				transform: translate(-50%, -20%);
+				border-bottom: 1px solid #fff;
+				text-align: center;
+			}
+
+			.down:nth-child(2) {
+				top: 60%;
+				transform: translate(-50%, -40%);
+				text-align: center;
+			}
+
+			.down {
+				width: 80%;
+				position: absolute;
+				top: 0%;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				cursor: pointer;
+				overflow: hidden;
+			}
+
+			.down:hover {
+				background: rgba(255, 255, 255, .1);
+			}
+
+			.ripple {
+				width: 30px;
+				height: 30px;
+				background: rgba(255, 255, 255, .45);
+				position: absolute;
+				top: 25%;
+				left: 50%;
+				transform: translate(-50%, -50%) scale(0);
+				transition: all 200ms ease-in-out;
+				border-radius: 50%;
+			}
+
+			.drop:nth-child(2) {
+				top: 75%;
+			}
+
+			.rotate {
+				width: 10px;
+				height: 10px;
+				background: #303030;
+				position: absolute;
+				top: 105%;
+				left: 110px;
+				transform: translate(-50%, -50%) rotate(45deg);
+				display: none !important;
+			}
+
+			h2:nth-child(1):hover ~ .dropdown {
+				display: block;
 			}
 
 		</style>
