@@ -15,7 +15,13 @@
 		</div>
 		
 		<div class="content">
-			<h3>Learn <strong>HTML</strong> with <span class="title xtitle">AppleProSchool</span></h3>
+			<h3>Learn <strong>HTML</strong> with <span class="title xtitle">AppleProSchool</span> (level 2)</h3>
+			<div class="code">
+				<em>div</em>
+				<code>
+					&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;<span class="grey">&lt;!-- This is a comment in HTML, users wont see it on the site --&gt;<br>&nbsp;&nbsp;&nbsp;&lt;!-- The div-tag is used to wrap text and images to different contents, and create rectangles, triangles and circles --&gt;</span><br>&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;/div&gt;<br>&lt;/body&gt;<br>&lt;style&gt;<br><br>&nbsp;&nbsp;&nbsp;div {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 50px;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #f00;<br>&nbsp;&nbsp;&nbsp;}<br><br>&lt;/style&gt;
+				</code>
+			</div>
 		</div>
 
 		<div class="sheild">
@@ -165,7 +171,6 @@ body
   -moz-outline: 5px auto rgba(0, 150, 255, 1);
   -ms-outline: 5px auto rgba(0, 150, 255, 1);
   -o-outline: 5px auto rgba(0, 150, 255, 1);
-  /* Use a border to apply the outline */
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
@@ -475,6 +480,43 @@ body
 				.sheild {
 					display: block;
 				}
+			}
+
+			.grey {
+				color: #999;
+			}
+
+			code {
+				font-family: Terminal, Monaco, Courier, Courier New, Helvetica, Arial, sans-serif !important;
+				width: 400px;
+				height: 400px;
+				background: #fff;
+				padding: 5px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 3px;
+			}
+
+			.code {
+				width: 440px;
+				height: 440px;
+				background: #eee;
+				position: relative;
+				padding: 15px;
+				border-radius: 7px;
+				left: 50%;
+				transform: translate(-50%, 0%);
+			}
+
+			.code em {
+				font-style: normal;
+				font-size: 20px;
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				margin: 1% 30px;
 			}
 
 		</style>
