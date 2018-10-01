@@ -22,6 +22,65 @@
 					&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;<span class="grey">&lt;!-- This is a comment in HTML, users wont see it on the site --&gt;<br>&nbsp;&nbsp;&nbsp;&lt;!-- The div-tag is used to wrap text and images to different contents, and create rectangles, triangles and circles --&gt;</span><br>&nbsp;&nbsp;&nbsp;&lt;div&gt;&lt;/div&gt;<br>&lt;/body&gt;<br>&lt;style&gt;<br><br>&nbsp;&nbsp;&nbsp;div {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 50px;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background: #f00;<br>&nbsp;&nbsp;&nbsp;}<br><br>&lt;/style&gt;
 				</code>
 			</div>
+			<br>
+			<hr>
+			<br>
+			<h5>HTML Attributes</h5>
+			<br>
+			<ul>
+				<li>All HTML elements can have attributes</li>
+				<li>Attributes provide additional information about an element</li>
+				<li>Attributes are always specified in the start tag</li>
+				<li>Attributes usually come in name/value pairs like: name="value"</li>
+			</ul>
+			<br>
+			<hr>
+			<br>
+			<h5>The href attribute</h5>
+			<br>
+			<p>HTML links are defined with the &lt;a&gt; tag. The link address is specified in the href attribute:</p>
+			<br>
+			<div class="code long">
+				<code class="long">
+					&lt;a href="https://appleproschool.github.io/Adam-Izgin/"&gt;This is a link&lt;/a&gt;
+				</code>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<h5>The src attribute</h5>
+			<br>
+			<p>HTML images are defined with the &lt;img&gt; tag.<br>The filename of the image source is specified in the src attribute:</p>
+			<br>
+			<div class="code long short">
+				<code class="long short">
+					&lt;img src="cat.jpg"&gt;
+				</code>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<h5>The width and height attributes</h5>
+			<br>
+			<p>Images in HTML have a set of size attributes, which specifies the width and height of the image:</p>
+			<br>
+			<div class="code long short">
+				<code class="long short">
+					&lt;img src="cat.jpg" width="200px" height="300px"&gt;
+				</code>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<h5>The id attribute</h5>
+			<br>
+			<div class="code long short">
+				<code class="long short">
+					&lt;div id="myCircle"&gt;&lt;/div&gt;
+				</code>
+			</div>
+			<br>
+			<p>The id attribute is used to name a specific element in HTML, you can later style the element using the id-name<br>id:s should be meaningfull, so it's easy to find that specific code.</p>
 		</div>
 
 		<div class="sheild">
@@ -51,6 +110,7 @@ body
 	font-family: Helvetica, Arial, sans-serif;
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 250vh;
 }
 
 .showOverflow
@@ -448,6 +508,7 @@ body
 				left: 0;
 				transform: translate(0%, -100%);
 				background: transparent;
+				text-align: center;
 			}
 
 			strong {
@@ -508,6 +569,7 @@ body
 				border-radius: 7px;
 				left: 50%;
 				transform: translate(-50%, 0%);
+				text-align: left;
 			}
 
 			.code em {
@@ -517,6 +579,40 @@ body
 				top: 0%;
 				left: 0%;
 				margin: 1% 30px;
+			}
+
+			hr {
+				width: 90vw;
+				height: 0;
+				background: 0;
+				border-left: none;
+				border-right: none;
+				border-bottom: none;
+				border-top: 1px solid #ddd;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			h5 {
+				font-size: 25px;
+				text-align: center;
+			}
+
+			ul {
+				text-align: left;
+				margin: 0 50%;
+				white-space: nowrap;
+				transform: translateX(-500%);
+			}
+
+			.long {
+				width: 500px;
+				height: 50px;
+			}
+
+			.short {
+				height: 25px;
 			}
 
 		</style>
