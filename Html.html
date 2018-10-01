@@ -4,6 +4,35 @@
 		<meta charset="utf-8">
 		<title>AppleProSchool</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript">
+			
+			function sign() {
+				document.querySelector('.signin').style.display="block";
+				location.href="#/sign-in";
+				setTimeout(function() {
+					document.querySelector('.signin').style.width="100vw";
+					document.querySelector('.signin').style.height="100vh";
+				}, 1);
+			}
+
+			function closeSign() {
+				document.querySelector('.signin').style.width="85%";
+				document.querySelector('.signin').style.height="85%";
+				location.href="#";
+				setTimeout(function() {
+					document.querySelector('.signin').style.display="none";
+				}, 150);
+			}
+
+			function signin() {
+				var mail = document.querySelector('#email');
+				var password = document.querySelector('#password');
+				if (mail.value=="malte05.mb.gmail.com" && password.value=="Gay69") {
+					alert('Hello, World!');
+				}
+			}
+
+		</script>
 	</head>
 	<body>
 	
@@ -11,11 +40,12 @@
 			<h2 class="active">Html</h2>
 			<h2>Css</h2>
 			<h2>JavaScript</h2>
+			<h2 onclick="sign();">Sign in</h2>
 			<h1 class="title">AppleProSchool</h1>
 		</div>
 		
 		<div class="content">
-			<h3>Learn <strong>HTML</strong> with <span class="title xtitle">AppleProSchool</span> (level 2)</h3>
+			<h3>Learn <strong>HTML</strong> with <span class="xtitle">AppleProSchool</span> (level 2)</h3>
 			<div class="code">
 				<em>div</em>
 				<code>
@@ -89,6 +119,20 @@
 			<p>HTML Css</p>
 		</div>
 
+		<div class="signin">
+			<h1>AppleProSchool</h1>
+			<p onclick="closeSign();">&#x2715;</p>
+			<h3>Sign in</h3>
+			<input type="text" id="email" placeholder="Email" list="members">
+			<datalist id="members">
+    		<option>malte05.mb@gmail.com</option>
+  		</datalist>
+			<input type="password" id="password" placeholder="Password">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<button type="button" onclick="signin();">Sign in</button>
+		</div>
+
 		<div class="sheild">
 			<h6>Please visit this site on a desktop, "hwAPS" is not compatible with your device.</h6>
 		</div>
@@ -117,6 +161,7 @@ body
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 250vh;
+	overflow-x: hidden;
 }
 
 .showOverflow
@@ -136,7 +181,7 @@ body
 	margin: 1% 0 0 0;
 	background: linear-gradient(to right, #f00 0%, #a0f 100%);
 	-webkit-background-clip: text;
-  	-webkit-text-fill-color: transparent;
+ 	-webkit-text-fill-color: transparent;
 }
 
 [background="white"]
@@ -464,6 +509,12 @@ body
 				left: 35%;
 				width: 140px;
 			}
+
+			h2:nth-child(4) {
+				left: 55%;
+				width: 85px;
+				white-space: nowrap;
+			}
 			
 			h2:hover {
 				background: #000;
@@ -478,7 +529,7 @@ body
 				background: #4caf50!important;
 			}
 			
-			h1 {
+			.title {
 				position: absolute;
 				top: 50%;
 				left: 95%;
@@ -505,6 +556,10 @@ body
 			
 			span.xtitle {
 				font-size: 27px;
+				background: linear-gradient(to right, #f00 0%, #a0f 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: 900;
 			}
 			
 			.content {
@@ -526,7 +581,7 @@ body
 				width: 100vw;
 				height: 100vh;
 				background: #fff;
-				position: absolute;
+				position: fixed;
 				top: 0;
 				left: 0;
 				z-index: 1000;
@@ -654,6 +709,159 @@ body
 
 			.sidebar p:hover {
 				background: rgba(255, 255, 255, .6);
+			}
+
+			.signin {
+				width: 85vw;
+				height: 85vh;
+				background: #fff;
+				position: fixed;
+				z-index: 1000;
+				display: none;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				box-shadow: 0 0 10px 0px rgba(0, 0, 0, .3);
+				transition: all 150ms ease-in-out;
+			}
+
+			.signin h3 {
+				font-size: 50px;
+				text-align: center;
+			}
+
+			.signin h1 {
+				margin: 4%;
+				font-weight: 900;
+				background: linear-gradient(to right, #f00 0%, #a0f 100%);
+				width: 250px;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			.signin p:nth-child(2) {
+				position: absolute;
+				top: 5%;
+				left: 95%;
+				transform: translate(-100%, 0%);
+				font-size: 50px;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				cursor: pointer;
+				width: 60px;
+				height: 60px;
+				padding: 10px;
+				background: transparent;
+				text-align: center;
+				transition: background 250ms ease-in-out;
+				border-radius: 50%;
+			}
+
+			.signin p:nth-child(2):hover {
+				background: rgba(0, 0, 0, .1);
+			}
+
+			.signin p:nth-child(2):active {
+				color: #eee;
+				background: rgba(0, 0, 0, .1);
+			}
+
+			#email {
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				width: 200px;
+				height: 20px;
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				border-bottom: 1px solid #bbb;
+				padding: 10px;
+				font-size: 18px;
+				outline: none;
+				transition: all 200ms ease-in-out;
+			}
+
+			#password {
+				position: absolute;
+				top: 55%;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				width: 200px;
+				height: 20px;
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				border-bottom: 1px solid #bbb;
+				padding: 10px;
+				font-size: 18px;
+				outline: none;
+				transition: all 200ms ease-in-out;
+			}
+
+			#email:hover {
+				border-bottom: 1px solid #888;
+			}
+
+			#password:hover {
+				border-bottom: 1px solid #888;
+			}
+
+			.line1 {
+				/* width: 220px; */
+				width: 0;
+				height: 2px;
+				background: #07f;
+				border-radius: 10px;
+				position: absolute;
+				top: calc(45% + 20px + 10px*2);
+				left: 50%;
+				transform: translate(-50%, 0%);
+				transition: width 150ms ease-in-out;
+			}
+
+			.line2 {
+				/* width: 220px; */
+				width: 0;
+				height: 2px;
+				background: #07f;
+				border-radius: 10px;
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, 0%);
+				transition: width 150ms ease-in-out;
+				top: calc(55% + 20px + 10px*2);
+			}
+
+			#email:focus ~ .line1 {
+				width: 220px;
+			}
+
+			#password:focus ~ .line2 {
+				width: 220px;
+			}
+
+			button {
+				width: 80px;
+				height: 50px;
+				background: #4c8aff;
+				border-radius: 5px;
+				border-top: 1px solid #eee;
+				border-right: 1px solid #bbb;
+				border-bottom: 1px solid #bbb;
+				border-left: 1px solid #eee;
+				color: #fff;
+				font-size: 18px;
+				position: absolute;
+				top: 65%;
+				left: calc(50% - 220px/2);
+				transform: translate(0%, -50%);
+				outline: none;
+				cursor: pointer;
 			}
 
 		</style>
